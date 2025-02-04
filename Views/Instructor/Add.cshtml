@@ -1,0 +1,49 @@
+﻿@model Instructor
+@{
+    ViewData["Title"] = "Add Instructor";
+    SelectList departmentOptions = new SelectList(ViewBag.Departments, "Id", "Name");
+    SelectList courseOptions = new SelectList(ViewBag.Courses, "Id", "Name");
+}
+
+<div class="container mt-4">
+    <h1 class="mb-4 text-center">Add Instructor</h1>
+
+    <form asp-action="SaveAdd" asp-controller="Instructor" method="post" class="p-4 border rounded shadow bg-light">
+
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label fw-bold">Name</label>
+            <input asp-for="Name" class="form-control" placeholder="Enter instructor's name" required />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ImageURL" class="form-label fw-bold">Profile Image URL</label>
+            <input asp-for="ImageURL" class="form-control" placeholder="Enter image filename (e.g., 1.png)" required />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Salary" class="form-label fw-bold">Salary</label>
+            <input asp-for="Salary" type="number" class="form-control" placeholder="Enter salary" required />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Address" class="form-label fw-bold">Address</label>
+            <input asp-for="Address" class="form-control" placeholder="Enter address" required />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="DepartmentId" class="form-label fw-bold">Department</label>
+            <select asp-for="DepartmentId" asp-items="departmentOptions" class="form-select">
+                <option value="" disabled selected>-- Select Department --</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="CourseId" class="form-label fw-bold">Course</label>
+            <select asp-for="CourseId" asp-items="courseOptions" class="form-select">
+                <option value="" disabled selected>-- Select Course --</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-success w-100">➕ Add and Save</button>
+    </form>
+</div>

@@ -1,0 +1,42 @@
+﻿@model Course
+@{
+    ViewData["Title"] = "Add";
+	SelectList departmentOptions = new SelectList(ViewBag.Departments, "Id", "Name");
+}
+
+
+
+<div class="container mt-4">
+    <h1 class="mb-4 text-center">Add Course</h1>
+
+    <form asp-action="SaveAdd" asp-controller="Course" method="post" class="p-4 border rounded shadow bg-light">
+
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label fw-bold">Name</label>
+            <input asp-for="Name" class="form-control" placeholder="Enter Course's name" required />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Degree" class="form-label fw-bold">Degree</label>
+            <input asp-for="Degree" class="form-control" placeholder="Enter Degree" required />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="MinDegree" class="form-label fw-bold">MinDegree</label>
+            <input asp-for="MinDegree" type="number" class="form-control" placeholder="Enter MinDegree" required />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="DepartmentId" class="form-label fw-bold">Department</label>
+            <select asp-for="DepartmentId" asp-items="departmentOptions" class="form-select">
+
+           </select>
+
+
+        </div>
+
+
+        <button type="submit" class="btn btn-success w-100">➕ Add and Save</button>
+    </form>
+</div>
+

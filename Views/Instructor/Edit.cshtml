@@ -1,0 +1,61 @@
+﻿@model Instructor
+@{
+    ViewData["Title"] = "Edit Instructor";
+	SelectList CoursesOptions = new SelectList(ViewBag.Courses, "Id", "Name");
+}
+
+<h1 class="mb-4">Edit Instructor</h1>
+
+<form action="/Instructor/SaveEdit/@Model.Id" method="post" class="container p-4 border rounded shadow bg-light">
+
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input name="Name" type="text" class="form-control" placeholder="Enter instructor's name"  value="@Model.Name" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Gender</label>
+        <select name="ImageURL" class="form-select" >
+            @if (Model.ImageURL == "1.png") {
+                <option selected value="1.png">Male</option>
+                <option value="2.jpeg">Female</option>
+            }else{
+                <option selected value="2.jpeg">Female</option>
+                <option value="1.png">Male</option>
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Salary</label>
+        <input name="Salary" type="number" class="form-control" placeholder="Enter salary" value="@Model.Salary" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Address</label>
+        <input name="Address" type="text" class="form-control" placeholder="Enter address" value="@Model.Address" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Department</label>
+        <select name="DepartmentId" class="form-select">
+            @foreach (var item in ViewBag.Departments)
+            {
+                if (Model.Department.Id == item.Id) {
+                    <option selected value="@item.Id">@item.Name</option>
+                }
+                else{
+                    <option value="@item.Id">@item.Name</option>}
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Courses</label>
+        <select class="form form-control" asp-items="CoursesOptions" asp-for="CourseId">
+            
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-success w-100">Change and Save ✅</button>
+</form>

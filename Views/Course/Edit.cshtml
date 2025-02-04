@@ -1,0 +1,40 @@
+﻿@model Course
+@{
+    ViewData["Title"] = "Edit";
+	SelectList DepartmentOptions = new SelectList(ViewBag.Departments, "Id", "Name");
+}
+
+
+
+<h1 class="mb-4">Edit Course</h1>
+
+<form asp-action="SaveEdit" asp-controller="Course" asp-route-id="@Model.Id" method="post" class="container p-4 border rounded shadow bg-light">
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" placeholder="Enter Course's name" value="@Model.Name" />
+    </div>
+
+   
+
+    <div class="mb-3">
+        <label asp-for="Degree" class="form-label"></label>
+        <input asp-for="Degree" class="form-control" placeholder="Enter salary" value="@Model.Degree" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="MinDegree" class="form-label"></label>
+        <input asp-for="MinDegree" class="form-control" placeholder="Enter address" value="@Model.MinDegree" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Department</label>
+        <select asp-for="DepartmentId" asp-items="DepartmentOptions" class="form-select">
+           
+        </select>
+    </div>
+
+   
+
+    <button type="submit" class="btn btn-success w-100">Change and Save ✅</button>
+</form>
