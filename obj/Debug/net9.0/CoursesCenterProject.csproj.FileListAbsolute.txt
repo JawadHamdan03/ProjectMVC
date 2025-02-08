@@ -327,3 +327,4 @@ C:\Users\hamda\Desktop\Jawad\Projects\WebProjects\CoursesCenterProject\bin\Debug
 C:\Users\hamda\Desktop\Jawad\Projects\WebProjects\CoursesCenterProject\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Scripting.resources.dll
 C:\Users\hamda\Desktop\Jawad\Projects\WebProjects\CoursesCenterProject\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Scripting.resources.dll
 C:\Users\hamda\Desktop\Jawad\Projects\WebProjects\CoursesCenterProject\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll
+C:\Users\hamda\Desktop\Jawad\Projects\WebProjects\CoursesCenterProject\obj\Debug\net9.0\CoursesCenterProject.sourcelink.json

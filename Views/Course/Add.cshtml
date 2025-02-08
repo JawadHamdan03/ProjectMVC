@@ -10,20 +10,23 @@
     <h1 class="mb-4 text-center">Add Course</h1>
 
     <form asp-action="SaveAdd" asp-controller="Course" method="post" class="p-4 border rounded shadow bg-light">
-
+        <div asp-validation-summary="All" class="text text-danger"></div>
         <div class="mb-3">
             <label asp-for="Name" class="form-label fw-bold">Name</label>
             <input asp-for="Name" class="form-control" placeholder="Enter Course's name" required />
+            <span asp-validation-for="Name" class="text text-danger"></span>
         </div>
 
         <div class="mb-3">
             <label asp-for="Degree" class="form-label fw-bold">Degree</label>
             <input asp-for="Degree" class="form-control" placeholder="Enter Degree" required />
+            <span asp-validation-for="Degree" class="text text-danger"></span>
         </div>
 
         <div class="mb-3">
             <label asp-for="MinDegree" class="form-label fw-bold">MinDegree</label>
             <input asp-for="MinDegree" type="number" class="form-control" placeholder="Enter MinDegree" required />
+            <span asp-validation-for="MinDegree" class="text text-danger"></span>
         </div>
 
         <div class="mb-3">
@@ -40,3 +43,10 @@
     </form>
 </div>
 
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>

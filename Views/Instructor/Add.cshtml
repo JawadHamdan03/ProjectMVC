@@ -11,13 +11,15 @@
     <form asp-action="SaveAdd" asp-controller="Instructor" method="post" class="p-4 border rounded shadow bg-light">
 
         <div class="mb-3">
-            <label asp-for="Name" class="form-label fw-bold">Name</label>
+            <label asp-for="Name"  class="form-label fw-bold">Name</label>
             <input asp-for="Name" class="form-control" placeholder="Enter instructor's name" required />
+            
         </div>
 
         <div class="mb-3">
             <label asp-for="ImageURL" class="form-label fw-bold">Profile Image URL</label>
             <input asp-for="ImageURL" class="form-control" placeholder="Enter image filename (e.g., 1.png)" required />
+            
         </div>
 
         <div class="mb-3">

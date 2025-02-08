@@ -17,13 +17,20 @@ public class CourseController : Controller
     public IActionResult Add()
     {
         ViewBag.Departments = DB.Departments.ToList();
-        return View("Add");
-    }
+            return View("Add");
+
+        }
     public IActionResult SaveAdd(Course RCV)
     {
-        DB.Courses.Add(RCV);
-        DB.SaveChanges();
-        return RedirectToAction("Index");
+
+        if(ModelState.IsValid){
+            DB.Courses.Add(RCV);
+            DB.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        ViewBag.Departments = DB.Departments.ToList();
+        return View("Add", RCV);
+
     }
 
     public IActionResult Edit(int id )
